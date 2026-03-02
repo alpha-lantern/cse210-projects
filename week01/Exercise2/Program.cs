@@ -32,8 +32,22 @@ class Program
             letter = "F";
         }
 
+        // Determine the sign (+ or -)
+        string sign = "";
+        int lastDigit = grade % 10;
+        // There's no A+ neither F+
+        if (lastDigit >= 7 && letter != "A" && letter != "F")
+        {
+            sign = "+";
+        }
+        // There's no F-
+        else if (lastDigit < 3 && letter != "F")
+        {
+            sign = "-";
+        }
+
         // Print letter
-        Console.WriteLine(letter);
+        Console.WriteLine($"Your grade is: {letter}{sign}");
 
         // Determine if the user passed the course
         if (grade >= 70)
@@ -42,7 +56,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("Sadly, you didn't pass. Continue studying and you'll do it!");
+            Console.WriteLine("Sadly, you didn't pass. Keep studying and you'll succeed!");
         }
     }
 }
