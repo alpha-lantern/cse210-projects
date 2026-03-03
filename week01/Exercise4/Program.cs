@@ -40,8 +40,6 @@ class Program
         // Console.WriteLine($"The sum is: {sum2}");
         // Console.WriteLine($"The average is: {avg}");
 
-        int largest = numbers.Max();
-        Console.WriteLine($"The largest number is: {largest}");
         // Find largest using a loop
         // int largest = numbers[0];
         // foreach (int number in numbers)
@@ -51,6 +49,8 @@ class Program
         //         largest = number;
         //     }
         // }
+        int largest = numbers.Max();
+        Console.WriteLine($"The largest number is: {largest}");
 
         // Find smallest positive number
         int smallest = largest;
