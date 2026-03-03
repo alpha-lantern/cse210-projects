@@ -21,9 +21,7 @@ class Program
                 numbers.Add(userNum);
             }
         }
-
-        Console.WriteLine($"Your list: {numbers}");
-
+        
         int sum = numbers.Sum();
         Console.WriteLine($"The sum is: {sum}");
 
@@ -43,5 +41,32 @@ class Program
 
         int largest = numbers.Max();
         Console.WriteLine($"The largest number is: {largest}");
+
+        // Find smallest positive number
+        int smallest = largest;
+        foreach (int number in numbers)
+        {
+            if (number > 0 && number < smallest)
+            {
+                smallest = number;
+            }
+        }
+        // Decide what to display
+        if (smallest != largest)
+        {
+            Console.WriteLine($"The smallest positive number is: {smallest}");   
+        }
+        else
+        {
+            Console.WriteLine($"There are no positive numbers.");
+        }
+        
+        // Display sorted list
+        Console.WriteLine("The sorted list is:");
+        numbers.Sort();
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number);
+        }
     }
 }
