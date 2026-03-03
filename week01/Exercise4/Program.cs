@@ -14,14 +14,15 @@ class Program
         while (userNum != 0)
         {
             Console.Write("Enter number: ");
-            userNum = int.Parse(Console.ReadLine());
+            string input = Console.ReadLine();
+            userNum = int.Parse(input);
 
             if (userNum != 0)
             {
                 numbers.Add(userNum);
             }
         }
-        
+
         int sum = numbers.Sum();
         Console.WriteLine($"The sum is: {sum}");
 
@@ -34,13 +35,22 @@ class Program
         // {
         //     sum2 += num;
         // }
-        // double avg = (double)sum2 / numbers.Count;
+        // float avg = (float)sum2 / numbers.Count;
         // // Display results
         // Console.WriteLine($"The sum is: {sum2}");
         // Console.WriteLine($"The average is: {avg}");
 
         int largest = numbers.Max();
         Console.WriteLine($"The largest number is: {largest}");
+        // Find largest using a loop
+        // int largest = numbers[0];
+        // foreach (int number in numbers)
+        // {
+        //     if (number > largest)
+        //     {
+        //         largest = number;
+        //     }
+        // }
 
         // Find smallest positive number
         int smallest = largest;
