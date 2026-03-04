@@ -15,6 +15,6 @@ class Program
         Console.WriteLine(); // Blank line
 
         // Print full name
-        Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}");
+        Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}.");
     }
 }
