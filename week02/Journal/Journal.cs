@@ -18,18 +18,15 @@ public class Journal()
     }
 
     // Save the journey to a simple file
-    public bool SaveToFile(string file)
+    public void SaveToFile(string file)
     {
         using (StreamWriter journalFile = new StreamWriter(file))
         {
             foreach(Entry entry in _entries)
             {
-                journalFile.WriteLine($"{entry._date}~{entry._promptText}~{entry._entryText}");
-                // journalFile.WriteLine(entry._prompt);
-                // journalFile.WriteLine(entry._entry);
+                journalFile.WriteLine($"{entry._date}~~{entry._promptText}~~{entry._entryText}");
             }
         }
-        return true;
     }
 
     // Load from a file
@@ -41,7 +38,7 @@ public class Journal()
             // Create new entry
             Entry newEntry = new();
             // Split the file lines to separate the journal parts
-            string[] parts = line.Split("~");
+            string[] parts = line.Split("~~");
             // Populate new entry and add it to the list
             newEntry._date = parts[0];
             newEntry._promptText = parts[1];
