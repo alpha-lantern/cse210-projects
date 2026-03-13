@@ -31,7 +31,7 @@ public class PromptGenerator
         else
         {
             // If there's no Prompts file, then a new one is created and saved to the current directory
-            List<string> defaultPrompts = ["Who was the most interesting person I interacted with today?", "What was the best part of my day?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?", "What did I do today to move forward with my goals?"];
+            List<string> defaultPrompts = ["Who did I spend the most time with today?", "What did I like most today?", "Who was the most interesting person I interacted with today?", "What was the best part of my day?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?", "What did I do today to move forward with my goals?"];
             SavePromptsFile(defaultPrompts);
 
             // I found help with paths in an answer on StackOverflow. Reference source:

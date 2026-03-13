@@ -1,3 +1,5 @@
+// Added: The program gets the prompts from a file called "prompts.txt" or creates a new one with default prompts.
+// Added: User can add new prompts to the prompt file
 using System;
 
 class Program
