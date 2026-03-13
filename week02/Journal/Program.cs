@@ -9,6 +9,9 @@ class Program
 
         // Create a Journal object to store the entries.
         Journal currentJournal = new();
+        
+        // Generate a new prompt generator. Just once when the program starts
+        PromptGenerator promptGen = new();
 
         // Display the menu options
         do
@@ -18,8 +21,9 @@ class Program
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
-            Console.Write("What would you like to do? (1-5) ");
+            Console.WriteLine("5. Configure");
+            Console.WriteLine("6. Quit");
+            Console.Write("What would you like to do? (1-6) ");
             // Read user input
             choice = Console.ReadLine();
 
@@ -36,7 +40,6 @@ class Program
                 newEntry._date = dateText;
 
                 // Get Random Prompt
-                PromptGenerator promptGen = new();
                 string prompt = promptGen.GetRandomPrompt();
                 newEntry._promptText = prompt;
 
@@ -70,6 +73,32 @@ class Program
             }
             else if (choice == "5")
             {
+                // Configuration
+                string configChoice;
+                Console.WriteLine(); // Blank line
+                Console.WriteLine("Configuration");
+                Console.WriteLine("Please select one of the following choices:");
+                Console.WriteLine("1. Add new prompts");
+                Console.WriteLine("2. Display all prompts");
+                Console.WriteLine("3. Quit");
+                Console.Write("What would you like to do? (1-3) ");
+                // Read user input
+                configChoice = Console.ReadLine();
+
+                if (configChoice == "1")
+                {
+                    // Add new prompts
+                    AddNewPrompts(promptGen);
+                }
+                else if (configChoice == "2")
+                {
+                    // Display prompts
+                    promptGen.DisplayAll();
+                }
+                Console.WriteLine(); // Blank line
+            }
+            else if (choice == "6")
+            {
                 // Quit
                 Console.WriteLine("Good bye!");
             }
@@ -80,6 +109,27 @@ class Program
                 Console.WriteLine();
             }
 
-        } while (choice != "5");
+        } while (choice != "6");
+    }
+
+    static void AddNewPrompts(PromptGenerator promptGenerator)
+    {
+        bool running = true;
+        do
+        {
+            Console.Write("Write a new prompt: ");
+            string newPrompt = Console.ReadLine();
+            promptGenerator.AddPrompt(newPrompt);
+            Console.WriteLine("Would you like to add another one? (yes/no)");
+            Console.Write("> ");
+            string choice = Console.ReadLine();
+            if (choice.ToLower() == "no")
+            {
+                promptGenerator.SavePromptsFile(promptGenerator._prompts);
+                Console.WriteLine("New prompts added!");
+                running = false;
+            }
+        }
+        while (running != false);
     }
 }
