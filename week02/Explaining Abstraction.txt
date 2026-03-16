@@ -1,0 +1,16 @@
+Explaining Abstraction
+Abstraction is the principle of turning complex processes or concepts to simpler lines of code. Through abstraction we can simplify the implementation of a program in code, making it simpler to understand for humans and efficient to computers. Some examples of the application of abstraction are "classes". With classes, we can encapsulate information and functionality, in a similar way we think about physical objects and their characteristics and utility. For example:
+public class Entry()
+{
+    public string _date;
+    public string _promptText;
+    public string _entryText;
+
+    public void Display()
+    {
+        Console.WriteLine($"Date: {_date} - Prompt: {_promptText}");
+        Console.WriteLine($"{_entryText}");
+    }
+}
+
+In this code, we create a class for an entry in a journal. We assume that there are some data we want in each entry of the journal (in this case: the date, the prompt or question to be answered, and the entry itself). If this would be a physical journal with handwritten entries, we should be able to see what we wrote, so we defined a "method" called "display" to show the entry to the user.
