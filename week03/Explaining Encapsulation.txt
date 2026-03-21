@@ -1,0 +1,34 @@
+Explaining Encapsulation
+Encapsulation is the principle of group code and functionality like you were putting stuff inside a capsule. This means you put together all the code that works for the same purpose in their own capsule. By doing this we're able to restring access to the data in the objects we use avoiding unnecessary changes and grouping all the specific tasks related together. It also makes the code easy to update because if you need to change something in the class, you won't need to change other classes or the main program. For example, in my program I have this class:
+public class Reference
+{
+    private string _book;
+    private int _chapter;
+    private int _verse;
+    private int _endVerse;
+
+    public Reference(string book, int chapter, int verse)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+    }
+    public Reference(string book, int chapter, int startVerse, int endVerse)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verse = startVerse;
+        _endVerse = endVerse;
+    }
+    public string GetDisplayText()
+    {
+        string displayText = $"{_book} {_chapter}:{_verse}";
+        if (_endVerse > 0)
+        {
+            displayText += $"-{_endVerse}";
+        }
+        return displayText;
+    }
+
+}
+The Reference class is responsible for any functionality related to a scripture reference, so no other part of the code needs to know the way this class store the data or how it works with it. But we can still use the data by calling methods, in this case, just a simple method to return a formatted display text.

@@ -1,0 +1,7 @@
+Explaining Version Control
+
+A Version Control System (VCS) provides a way to track all the versions of the code and changes made to it, where the changes where made, why they were submitted (with the commit messages) and more, making it an important source of information about the project for the developers. Usually, developers will create "branches" or different versions of the code in the repository to work in, before submitting the changes to it.
+
+With VCSs like Git, the team can work on a project at the same time in their own computers using branches of the repository, and later update the code for everyone in a server (push it to a Github repository, for example). This alows teams to develop programs faster and coordinate the work better with the information provided in the VCS.
+
+To submit the changes for everyone in the main repository, the developer can execute commands in the terminal like "git add" to stage the modified files, "git commit" to add a commit message for the staged files and "git push" to update the remote repository; or use an extension with a GUI like the VS Code extension for Git. Using the terminal can be more efficient sometimes.
