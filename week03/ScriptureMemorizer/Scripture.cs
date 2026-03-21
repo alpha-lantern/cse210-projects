@@ -67,4 +67,23 @@ public class Scripture
             _words.Add(newWord);
         }
     }
+
+    // Experimental function
+    public void LoadFromFile(string filename)
+    {
+        string[] lines = File.ReadAllLines(filename);
+        
+        int refIndex = 0;
+        int textIndex = 1;
+
+        string referenceText = lines[refIndex];
+
+        _reference = _reference.LoadReference(referenceText);
+        _words = [];
+
+        for (int i = textIndex; i < lines.Length; i++)
+        {
+            ParseText(lines[i]);
+        }
+    }
 }
