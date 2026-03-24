@@ -96,6 +96,7 @@ class Program
         {
             video.DisplayAll();
             Console.WriteLine("______________________________________________________");
+            Console.WriteLine();
         }
     }
 }
