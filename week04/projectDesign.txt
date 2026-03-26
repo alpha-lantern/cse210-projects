@@ -1,0 +1,93 @@
+**********************************************************
+************** YouTubeVideos Project Design **************
+**********************************************************
+----------------------------------------------------------
+|                          Video                         |
+----------------------------------------------------------
+_title : string
+_author : string
+_length : int
+_comments : List<Comment>
+----------------------------------------------------------
+Video(tittle : string, author : string, length : string)
+
+GetNumberOfComments() : int
+AddComment(author : string, comment : string) : void
+DisplayAll() : void
+----------------------------------------------------------
+
+----------------------------------------------------------
+|                         Comment                        |
+----------------------------------------------------------
+_user : string
+_text : string
+----------------------------------------------------------
+Comment(user : string, text : string)
+
+GetDisplayText() : string
+----------------------------------------------------------
+
+**********************************************************
+************* OnlineOrdering Project Design **************
+**********************************************************
+----------------------------------------------------------
+|                          Order                         |
+----------------------------------------------------------
+_products : List<Product>
+_customer : Customer
+----------------------------------------------------------
+Order(customer : Customer)
+
+GetTotalCost() : float
+AddProduct(product : Product) : void
+GetPackagingLabel() : List<string>
+GetShippingLabel() : string
+----------------------------------------------------------
+
+----------------------------------------------------------
+|                         Customer                       |
+----------------------------------------------------------
+_name : string
+_address : Address
+----------------------------------------------------------
+Customer(name : string)
+
+LiveInUSA() : bool
+GetName() : string
+GetAddress() : Address
+SetAddress(street : string, city : string, state : string, 
+        country : string) : void
+----------------------------------------------------------
+
+----------------------------------------------------------
+|                         Address                        |
+----------------------------------------------------------
+_street : string
+_city : string
+_state : string
+_country : string
+----------------------------------------------------------
+Address(street : string, city : string, state : string, 
+        country : string)
+
+InUSA() : bool
+GetAddressText() : string
+----------------------------------------------------------
+
+----------------------------------------------------------
+|                          Product                       |
+----------------------------------------------------------
+_name : string
+_id : string
+_price : float
+_quantity : int
+----------------------------------------------------------
+Product(name : string, id : string, price : float)
+Product(name : string, id : string, price : float, 
+        quantity : int)
+
+GetTotalCost() : float
+GetName() : string
+GetId() : string
+SetQuantity(quantity : int) : void
+----------------------------------------------------------
