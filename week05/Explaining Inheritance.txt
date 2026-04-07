@@ -1,0 +1,23 @@
+Explaining Inheritance
+Inheritance is the principle of deriving classes from a parent class. In this way the children classes inherit any functionality or information from the parent (or base class), and helps avoiding repetition of basic stuff that all the derived (or "sub") classes share. It's like having a general template, and using that template to create some specific ones for other things.
+The principle of inheritance is widely applicated in object oriented programming, to build stronger programs that are more efficient, and easy to maintain.
+For example, I have a base class named Activity:
+public class Activity
+{
+    private string _name;
+    private string _description;
+    private int _duration = 30; // Default time
+	...
+}
+and a derived class named ListingActivity:
+public class ListingActivity : Activity
+{
+    private int _count;
+    private List<string> _prompts = [..];
+	...
+	// Constructors and Methods
+    public ListingActivity(string name, string description) : base(name, description) 
+    {}
+	...
+}
+The ListingActivity class also has the member variables of the Activity class because it inherits them. This means that each ListingActivity will also have a "_name" and a "_decription", as can be seen in the example constructor above.
