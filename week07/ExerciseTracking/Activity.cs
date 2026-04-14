@@ -9,10 +9,10 @@ public abstract class Activity
         _length = length;
     }
 
-    public void SetName(string name)
-    {
-        _name = name;
-    }
+    // public void SetName(string name)
+    // {
+    //     _name = name;
+    // }
     public double GetLength()
     {
         return _length;
