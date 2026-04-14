@@ -1,0 +1,28 @@
+Explaining Polymorphism
+Polymorphism is the ability to take different forms, or, talking about classes, changing a method functionality according to the context when is called. With polymorphism, when we create a class we can modify its methods inside the derived classes to fulfill the derived class functionality. Using this principle we are able to improve the program abstraction by providing our classes with all the shared methods since the beginning without needing to worry about the specific additional member variables or methods the derived classes need. For example:
+I have a base class as follows:
+public abstract class Goal {
+	... // more code
+    public abstract void RecordEvent();
+    public abstract bool IsComplete();
+    public virtual string GetDetailString()
+    {
+        string detailString = $"{GetCheckbox()} {_shortName} ({_description})";
+        return detailString;
+    }
+	... // more code
+}
+
+The derived classes may implement and use those abstract methods. The methods will work according to the class who called it. The ChecklistGoal sub class overrides the GetDetailString method as follows:
+    public override string GetDetailString()
+    {
+        string detailString = $"{GetCheckbox()} {GetName()} ({GetDescription()}) -- Currently completed: {_amountCompleted}/{_target}";
+        return detailString;
+    }
+
+ Since the methods are declared inside the base class no matter which of the derived classes calls it. For example in this loop no matter what kind of goal it is, the GetDetailString method will work.
+        foreach (Goal goal in _goals)
+        {
+            Console.WriteLine($"{n}. {goal.GetDetailString()}");
+            n ++;
+        }
