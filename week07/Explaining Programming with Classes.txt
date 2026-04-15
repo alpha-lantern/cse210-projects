@@ -1,0 +1,20 @@
+Explaining Programming with Classes
+Programming with classes is a powerful tool for programmers, allowing programmers to translate complex concepts to code a program grouped by functionality and concepts. Programming with classes includes 4 principles: Abstraction, Encapsulation, Inheritance and Polymorphism.
+
+Abstraction: 
+Is the principle of turning complex processes or concepts (like real world things) to simpler lines of code. It includes planification to simplify information and functionality to a class or classes that will provide these things. 
+In Journal project, for example, I created a class to handle the entries called "Entry". Each instance of this class could store the data, related to an entry and a method to Display the information.
+
+Encapsulation:
+Is the principle of grouping related data and functionality like you were putting stuff inside a capsule. 
+In the Scripture Memorizer program I used this principle to encapsulate all the things related to a reference inside the "Reference" class, setting the member variables as "private" to prevent other parts of the program to modify them directly, and methods are used to obtain information or access functionality from the class. This principle helps us build code easier to update, and more secure.
+
+Inheritance:
+Means deriving classes from a "parent" class. In this way the children classes inherit any functionality or information from the parent (or base class), and helps avoiding repetition in the derived (or "sub") classes. Applying this principle correctly will make our programs more efficient. 
+In the "Mindfulness" project, I created a base class named "Activity", where I put all the shared functionality between activities. In this way, related classes like "Breathing" and "Listing" activities will automatically gain the functionality and way to store data from the Activity class.
+
+Polymorphism:
+In programming, polymorphism implies the ability to change the behavior of a method according to the context when is called (like, which class calls it). By defining methods with the "virtual" keyword, or the whole class with "abstract" keyword and adding the same keyword to the methods, we are able to override them inside the sub classes. This way, we can code base classes more like blueprints that each sub class will need to adapt. 
+For example, in the "Exercise Tracking" program, the Activity class declares all the functions share between the activities, but doesn't implement them all, leaving the responsibility to the derived classes. So every class has access to a "GetSpeed()" method, but it's implementation is different.
+
+Applying these principles allow programmers to build more solid code, that is easy to maintain, since the changes can be made in one place and will made effect everywhere the class is applied.

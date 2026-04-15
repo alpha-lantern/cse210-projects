@@ -26,3 +26,5 @@ The derived classes may implement and use those abstract methods. The methods wi
             Console.WriteLine($"{n}. {goal.GetDetailString()}");
             n ++;
         }
+
+Indeed polymorphism is a powerful principle in object oriented programming. Learning to use it will optimize the programs we write.
